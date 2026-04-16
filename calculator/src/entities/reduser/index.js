@@ -44,7 +44,12 @@ export function reducer(state, { type, payload }) {
       };
 
     case ACTIONS.EVALUATE:
-      if (Object.values (state).some(el =>!el) return state)
+      if (!operation || !previousOperand || !currentOperand) return state;
+      return {
+        currentOperand: evaluate(state),
+        previousOperand: null,
+        operation: null,
+      };
 
     default:
       return state;
